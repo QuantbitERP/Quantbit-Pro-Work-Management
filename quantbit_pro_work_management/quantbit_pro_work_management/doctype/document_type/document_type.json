@@ -8,12 +8,11 @@
  "field_order": [
   "register_document_category_section",
   "document_type_name",
-  "document_type_code",
   "reminder_days_before_expiry",
   "is_active",
   "column_break_maeu",
   "document_category",
-  "validity_months",
+  "validity_days",
   "renewal_allowed",
   "has_expiry",
   "details_section",
@@ -53,12 +52,6 @@
    "label": "Has Expiry"
   },
   {
-   "fieldname": "validity_months",
-   "fieldtype": "Int",
-   "label": "Validity (Months)",
-   "mandatory_depends_on": "eval:doc.has_expiry==1"
-  },
-  {
    "default": "1",
    "fieldname": "renewal_allowed",
    "fieldtype": "Check",
@@ -70,13 +63,6 @@
    "fieldtype": "Check",
    "in_list_view": 1,
    "label": "Is Active"
-  },
-  {
-   "fieldname": "document_type_code",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Document Type Code",
-   "unique": 1
   },
   {
    "fieldname": "column_break_maeu",
@@ -91,12 +77,18 @@
    "fieldname": "reminder_days_before_expiry",
    "fieldtype": "Int",
    "label": "Reminder Days Before Expiry"
+  },
+  {
+   "fieldname": "validity_days",
+   "fieldtype": "Int",
+   "label": "Validity (Days)",
+   "mandatory_depends_on": "eval:doc.has_expiry==1"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-12 10:42:33.559447",
+ "modified": "2026-02-13 11:54:41.512466",
  "modified_by": "Administrator",
  "module": "Quantbit Pro Work Management",
  "name": "Document Type",

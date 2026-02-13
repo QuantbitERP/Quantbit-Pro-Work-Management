@@ -6,8 +6,13 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_wkgz",
+  "section_break_nnna",
+  "column_break_drgi",
+  "applicant_type",
+  "column_break_nykt",
+  "employee",
   "applicant",
+  "section_break_wkgz",
   "applicant_full_name",
   "document_category",
   "transaction_type",
@@ -31,6 +36,7 @@
   "application_info_section",
   "previous_document",
   "previous_expiry_date",
+  "new_expiry_date",
   "allow_expiry_override",
   "column_break_helk",
   "renewal_fees",
@@ -53,14 +59,6 @@
    "fieldname": "section_break_wkgz",
    "fieldtype": "Section Break",
    "label": "Basic Information"
-  },
-  {
-   "fieldname": "applicant",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Applicant",
-   "options": "Applicant",
-   "reqd": 1
   },
   {
    "fetch_from": "applicant.full_name",
@@ -86,7 +84,7 @@
    "in_list_view": 1,
    "label": "Document Category",
    "options": "Document Category",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "document_type",
@@ -132,6 +130,7 @@
    "label": "Issuance Details"
   },
   {
+   "allow_on_submit": 1,
    "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
@@ -204,7 +203,8 @@
    "fieldname": "previous_document",
    "fieldtype": "Link",
    "label": "Previous Document",
-   "options": "Document Application"
+   "options": "Document Application",
+   "read_only": 1
   },
   {
    "fieldname": "renewal_fees",
@@ -240,20 +240,11 @@
    "label": "For Override"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Document Application",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "depends_on": "eval:doc.transaction_type==\"Extension\"",
    "fieldname": "extended_date",
    "fieldtype": "Date",
-   "label": "Extended Date"
+   "label": "Extended Date",
+   "mandatory_depends_on": "eval:doc.transaction_type==\"Extension\""
   },
   {
    "depends_on": "eval:doc.transaction_type==\"Extension\"",
@@ -275,25 +266,79 @@
    "fetch_if_empty": 1,
    "fieldname": "previous_referred_expiry_date",
    "fieldtype": "Date",
-   "label": "Previous Referred Expiry Date"
+   "label": "Previous Referred Expiry Date",
+   "read_only": 1
   },
   {
    "fieldname": "previous_referred_document",
    "fieldtype": "Link",
    "label": "Previous Referred Document",
-   "options": "Document Application"
+   "options": "Document Application",
+   "read_only": 1
   },
   {
    "fieldname": "extension_fees",
    "fieldtype": "Currency",
    "label": "Extension Fees"
+  },
+  {
+   "fieldname": "section_break_nnna",
+   "fieldtype": "Section Break",
+   "label": "Applicant type"
+  },
+  {
+   "fieldname": "applicant_type",
+   "fieldtype": "Select",
+   "label": "Applicant Type",
+   "options": "Employee\nExternal",
+   "reqd": 1
+  },
+  {
+   "default": "External",
+   "fieldname": "column_break_drgi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_nykt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.applicant_type==\"Employee\"",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "mandatory_depends_on": "eval:doc.applicant_type==\"Employee\"",
+   "options": "Employee"
+  },
+  {
+   "depends_on": "eval:doc.applicant_type == \"External\"",
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "label": "Applicant",
+   "mandatory_depends_on": "eval:doc.applicant_type == \"External\"",
+   "options": "Applicant"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Application",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "new_expiry_date",
+   "fieldtype": "Date",
+   "label": "New Expiry Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-12 14:11:15.699286",
+ "modified": "2026-02-13 11:50:17.252991",
  "modified_by": "Administrator",
  "module": "Quantbit Pro Work Management",
  "name": "Document Application",
@@ -310,6 +355,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
