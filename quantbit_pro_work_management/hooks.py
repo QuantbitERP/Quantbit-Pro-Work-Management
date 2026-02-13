@@ -249,6 +249,6 @@ app_license = "mit"
 
 scheduler_events = {
     "daily": [
-        "your_app.tasks.check_document_expiry_notifications"
+        "quantbit_pro_work_management.tasks.check_document_expiry_notifications"
     ]
 }
