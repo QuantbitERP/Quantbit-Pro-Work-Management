@@ -21,7 +21,6 @@
   "passport_no",
   "document_type",
   "document_details_section",
-  "applied_date",
   "purpose",
   "status",
   "column_break_iqta",
@@ -31,7 +30,7 @@
   "document_number",
   "issue_date",
   "column_break_leml",
-  "validity_months",
+  "validity_days",
   "expiry_date",
   "application_info_section",
   "previous_document",
@@ -51,8 +50,7 @@
   "for_override_section",
   "override_reason",
   "supporting_documents_section",
-  "supporting_document",
-  "amended_from"
+  "supporting_document"
  ],
  "fields": [
   {
@@ -91,7 +89,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Document Type",
-   "mandatory_depends_on": "eval:doc.document_category",
    "options": "Document Type",
    "reqd": 1
   },
@@ -111,12 +108,6 @@
    "fieldname": "application_info_section",
    "fieldtype": "Section Break",
    "label": "Renewal Details"
-  },
-  {
-   "default": "Today",
-   "fieldname": "applied_date",
-   "fieldtype": "Date",
-   "label": "Applied Date"
   },
   {
    "fieldname": "fees",
@@ -170,34 +161,33 @@
   {
    "fieldname": "transaction_type",
    "fieldtype": "Select",
-   "label": "Transaction Type",
+   "label": "Application Type",
    "options": "New Application\nRenewal\nExtension\nReplacement\nCancellation"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "document_number",
    "fieldtype": "Data",
-   "label": "Document Number"
+   "label": "Document Number",
+   "permlevel": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "issue_date",
    "fieldtype": "Date",
-   "label": "Issue Date"
+   "label": "Issue Date",
+   "permlevel": 1
   },
   {
    "fieldname": "column_break_leml",
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "document_type.validity_months",
-   "fieldname": "validity_months",
-   "fieldtype": "Int",
-   "label": "Validity (Months)",
-   "read_only": 1
-  },
-  {
+   "allow_on_submit": 1,
    "fieldname": "expiry_date",
    "fieldtype": "Date",
-   "label": "Expiry Date"
+   "label": "Expiry Date",
+   "permlevel": 1
   },
   {
    "fieldname": "previous_document",
@@ -226,7 +216,8 @@
    "default": "0",
    "fieldname": "allow_expiry_override",
    "fieldtype": "Check",
-   "label": "Allow Expiry Override "
+   "label": "Allow Expiry Override ",
+   "permlevel": 2
   },
   {
    "fieldname": "override_reason",
@@ -319,26 +310,34 @@
    "options": "Applicant"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Document Application",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "new_expiry_date",
    "fieldtype": "Date",
    "label": "New Expiry Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "document_type.validity_days",
+   "fieldname": "validity_days",
+   "fieldtype": "Int",
+   "label": "Validity (Days)",
+   "permlevel": 1,
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2026-02-13 11:50:17.252991",
+ "links": [
+  {
+   "link_doctype": "Document Application",
+   "link_fieldname": "previous_document"
+  },
+  {
+   "link_doctype": "Document Application",
+   "link_fieldname": "previous_referred_document"
+  }
+ ],
+ "modified": "2026-02-13 17:17:11.588614",
  "modified_by": "Administrator",
  "module": "Quantbit Pro Work Management",
  "name": "Document Application",

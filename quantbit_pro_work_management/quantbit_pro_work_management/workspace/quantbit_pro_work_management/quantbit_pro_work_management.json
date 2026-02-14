@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"NhqJykXRR9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Quantbit Pro Work Management</span>\",\"col\":12}},{\"id\":\"hRtqY-tl9d\",\"type\":\"card\",\"data\":{\"card_name\":\"Master and Setup\",\"col\":4}},{\"id\":\"jGjqzKvbUy\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}}]",
+ "content": "[{\"id\":\"NhqJykXRR9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Quantbit Pro Work Management</span>\",\"col\":12}},{\"id\":\"hRtqY-tl9d\",\"type\":\"card\",\"data\":{\"card_name\":\"Master and Setup\",\"col\":4}},{\"id\":\"jGjqzKvbUy\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"RRH7-i_kVL\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports and Registers\",\"col\":4}},{\"id\":\"YDdBCYx6EI\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"CtJHgibOFc\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Document Category Overview</b></span>\",\"col\":12}},{\"id\":\"g7VoWci257\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"New Applications\",\"col\":4}},{\"id\":\"O2qumXGUQc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Extended Applications\",\"col\":4}},{\"id\":\"kl56R9KfmS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Renewed Applications\",\"col\":4}},{\"id\":\"w9xUt1diZB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Cancelled Applications\",\"col\":4}},{\"id\":\"LQ96S4mfsQ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Replaced Applications\",\"col\":4}},{\"id\":\"KNp0141-xi\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ypc46XQ_-g\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Application Status Overview</b></span>\",\"col\":12}},{\"id\":\"a__MrRCrlk\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Travel & Entry \",\"col\":4}},{\"id\":\"uztlgNGtYx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Stay & Residence\",\"col\":4}},{\"id\":\"rENP8qXsmk\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Supporting Docs\",\"col\":4}},{\"id\":\"w2uR9S_NYl\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Identity Docs\",\"col\":4}},{\"id\":\"DH_EfVskMq\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Work & Business\",\"col\":4}}]",
  "creation": "2026-02-12 09:44:35.018177",
  "custom_blocks": [],
  "docstatus": 0,
@@ -55,6 +55,26 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Reports and Registers",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Document Application Report",
+   "link_count": 0,
+   "link_to": "Document Application Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "User Application Platform",
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Operations",
    "link_count": 1,
    "link_type": "DocType",
@@ -72,11 +92,52 @@
    "type": "Link"
   }
  ],
- "modified": "2026-02-12 15:17:13.367942",
+ "modified": "2026-02-13 16:39:11.915846",
  "modified_by": "Administrator",
  "module": "Quantbit Pro Work Management",
  "name": "Quantbit Pro Work Management",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "New Applications",
+   "number_card_name": "New Applications"
+  },
+  {
+   "label": "Renewed Applications",
+   "number_card_name": "Renewed Applications"
+  },
+  {
+   "label": "Travel & Entry ",
+   "number_card_name": "Travel and Entry Document Category"
+  },
+  {
+   "label": "Extended Applications",
+   "number_card_name": "Extended Applications"
+  },
+  {
+   "label": "Stay & Residence",
+   "number_card_name": "Stay & Residence"
+  },
+  {
+   "label": "Cancelled Applications",
+   "number_card_name": "Cancelled Applications"
+  },
+  {
+   "label": "Supporting Docs",
+   "number_card_name": "Supporting Docs"
+  },
+  {
+   "label": "Replaced Applications",
+   "number_card_name": "Replaced Applications"
+  },
+  {
+   "label": "Identity Docs",
+   "number_card_name": "Identity Docs"
+  },
+  {
+   "label": "Work & Business",
+   "number_card_name": "Work & Business"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
