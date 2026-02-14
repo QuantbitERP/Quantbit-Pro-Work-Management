@@ -252,3 +252,34 @@ scheduler_events = {
         "quantbit_pro_work_management.tasks.check_document_expiry_notifications"
     ]
 }
+
+fixtures = [
+    {
+        "dt": "Number Card",
+        "filters": [
+            [
+                "document_type",
+                "=",
+                "Document Application"
+            ]
+        ]
+    },
+    {
+        "dt": "Workspace",
+        "filters": [
+            ["module", "=", "Quantbit Pro Work Management"]
+        ]
+    },
+    {
+        "dt": "Role",
+        "filters": [
+            ["name", "in", ["Pro Work Manager", "Pro Work Officer", "Pro Work User"]]
+        ]
+    },
+    {
+        "dt": "DocPerm",
+        "filters": [
+            ["parent", "=", "Document Application"]
+        ]
+    }
+]
